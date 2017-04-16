@@ -1,3 +1,6 @@
 import { map } from 'lodash';
+import template from './numberlist.hbs'
 
-console.log( map([1,2,3,4,5,7], x => x*x ));
+let numbers =  map([1,2,3,4,5,7], x => x*x );
+
+console.log(template({numbers}));
