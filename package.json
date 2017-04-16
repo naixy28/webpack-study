@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "del-cli dist -f",
-    "build": "webpack src/main.js dist/bundle.js",
+    "build": "webpack",
     "execute": "node dist/bundle.js",
     "start": "npm run build -s && npm run execute -s"
   },
