@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
 module.exports = {
     // entry: './src/main.js',
@@ -29,6 +30,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Intro to webpack',
             template: 'src/index.html'
+        }),
+        new UglifyJsPlugin({
+            beautify: false,
+            mangle: {screw_ie8 : true},
+            compress: { screw_ie8: true, warnings: false },
+            comments: false
         })
     ]
 };
