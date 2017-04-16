@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     // entry: './src/main.js',
@@ -23,6 +24,12 @@ module.exports = {
             },
             { test: /\.hbs$/, loader: 'handlebars-loader' }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Intro to webpack',
+            template: 'src/index.html'
+        })
+    ]
 };
 
